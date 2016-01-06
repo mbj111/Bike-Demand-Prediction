@@ -25,10 +25,10 @@ def rmse(reslt,predt,tst):
 #Data taken from UCI Repository and divided into train.csv and test.csv
 
 #train data - train.csv file
-train_data = pd.read_csv("../Data_Set/train.csv", header=0)
+train_data = pd.read_csv("Data_Set/train.csv", header=0)
 
 #test data - test.csv file
-test_data = pd.read_csv("../Data_Set/test.csv", header=0)
+test_data = pd.read_csv("Data_Set/test.csv", header=0)
 
 #############################################################################################
 #										Data Cleaning Section								#
@@ -183,35 +183,35 @@ plt.show()
 print 'Writing file'
 
 #Bayesian Ridge result file
-pred_file_clf = open("results_bayesian_ridge.csv","wb")
+pred_file_clf = open("results/results_bayesian_ridge.csv","wb")
 open_csv_clf = csv.writer(pred_file_clf)
 open_csv_clf.writerow(["instant", "date", "count"])
 open_csv_clf.writerows(zip(instant, dates, pred_clf))
 pred_file_clf.close()
 
 #Linear Regression results file
-pred_file_ols = open("results_linear_regression.csv","wb")
+pred_file_ols = open("results/results_linear_regression.csv","wb")
 open_csv_ols = csv.writer(pred_file_ols)
 open_csv_ols.writerow(["instant", "date", "count"])
 open_csv_ols.writerows(zip(instant, dates, pred_ols))
 pred_file_ols.close()
 
 #Radial Basis SVM Regression result file
-pred_file_rbf = open("results_radial_basis.csv","wb")
+pred_file_rbf = open("results/results_radial_basis.csv","wb")
 open_csv_rbf = csv.writer(pred_file_rbf)
 open_csv_rbf.writerow(["instant", "date", "count"])
 open_csv_rbf.writerows(zip(instant, dates, pred_rbf))
 pred_file_rbf.close()
 
 #Random Forest Regression result file
-pred_file_forest = open("results_random_forest.csv","wb")
+pred_file_forest = open("results/results_random_forest.csv","wb")
 open_csv_forest = csv.writer(pred_file_forest)
 open_csv_forest.writerow(["instant", "date", "count"])
 open_csv_forest.writerows(zip(instant, dates, pred_forest))
 pred_file_forest.close()
 
 #Gradient Boosting Regression file
-pred_file_gradient = open("results_gradient_boost.csv","wb")
+pred_file_gradient = open("results/results_gradient_boost.csv","wb")
 open_csv_gradient = csv.writer(pred_file_gradient)
 open_csv_gradient.writerow(["instant", "date", "count"])
 open_csv_gradient.writerows(zip(instant, dates, pred_gradient))
